@@ -1,0 +1,21 @@
+#! /bin/bash
+
+declare -a errors
+output=''
+files=$(git diff-index --name-only --diff-filter=ACMR HEAD | grep '\.php$')
+
+if [ -n "$files" ]; then
+  for file in $files; do
+    output=`$PWD/vendor/bin/phpcs --standard=PSR2,PSR1 $file | grep '| ERROR |'`
+
+    $PWD/vendor/bin/phpcs --standard=PSR2,PSR1 $file
+
+    if [ -n "$output" ]; then
+      errors=("${errors[@]}" "$output")
+    fi
+  done
+fi
+
+if [ -n "$errors" ]; then
+  exit 1
+fi
