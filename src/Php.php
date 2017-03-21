@@ -2,9 +2,11 @@
 
 namespace Amaro\Composer;
 
+use Composer\Script\Event;
+
 class Php
 {
-    public function postInstall()
+    public function postInstall(Event $event)
     {
         
     }
