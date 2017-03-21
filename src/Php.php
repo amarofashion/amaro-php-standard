@@ -6,13 +6,8 @@ use Composer\Script\Event;
 
 class Php
 {
-    public function postInstall(Event $event)
+    public static function configure()
     {
-        
-    }
-
-    public function postUpdate()
-    {
-        
+        copy(dirname(__FILE__) . '/../script/pre-commit', './.git/hooks/pre-commit');
     }
 }
