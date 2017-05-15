@@ -2,8 +2,6 @@
 
 namespace Amaro\Composer;
 
-use Composer\Script\Event;
-
 class Php
 {
     public static function configure()
