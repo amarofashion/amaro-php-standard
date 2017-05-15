@@ -1,5 +1,5 @@
 #Configurar no arquivo composer.json
-'''js
+```js
 {
     "repositories": [
         {
@@ -16,4 +16,4 @@
         ]
     }
 }
-'''
+```
