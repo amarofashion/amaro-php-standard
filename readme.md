@@ -1,12 +1,10 @@
-#Configurar no arquivo composer.json
+# Configurar no arquivo composer.json
+
 ```js
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "Repositorio do git"
-        }
-    ],
+    "require": {
+        "amaro/php-standard": "*"
+    },
     "scripts": {
         "post-install-cmd": [
             "Amaro\\Composer\\Php::configure"
