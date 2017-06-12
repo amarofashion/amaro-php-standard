@@ -2,7 +2,8 @@
 
 declare -a errors
 output=''
-files=$(git diff-index --name-only --diff-filter=ACMR HEAD | grep '\.php$')
+
+files=$(git diff-index --name-only --diff-filter=ACMR HEAD | grep '\.php$' | grep -vE 'migrations/')
 
 if [ -n "$files" ]; then
   for file in $files; do
